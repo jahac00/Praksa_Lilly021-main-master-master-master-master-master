@@ -56,7 +56,7 @@ function DataGridTable({ endpoint }) {
             : key === "strIngredient1"
             ? "Ingredients"
             : key,
-        width: 150,
+        width: 250,
       }))
     : [];
 
