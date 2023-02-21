@@ -25,6 +25,7 @@ function Main() {
         element={<Navigate to="/cocktail-not-found" />}
       />
       <Route path="/cocktail-not-found" element={<CocktailNotFound />} />
+      <Route path="/search/:ingredient?/:glass?/:category?/:alcohol?" component={BartenderBeginner} />
     </Routes>
   );
 }
