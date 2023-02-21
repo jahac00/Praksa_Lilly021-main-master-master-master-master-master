@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import styles from "../css/clearStorageButton.module.css";
+import styles from "../css/footer.module.css";
 
 function ClearLocalStorageButton() {
     function handleClearLocalStorage() {

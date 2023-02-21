@@ -25,7 +25,18 @@ function Home() {
           ))}
         </ul>
       ) : (
-        <Typography variant="subtitle1">No favorites added yet.</Typography> 
+        <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "50vh",
+        fontSize: "3rem",
+        color: "white",
+      }}
+    >
+      No Favorites Added Yet!
+    </div>
       )}
     </div>
   );
