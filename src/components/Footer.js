@@ -1,4 +1,4 @@
-// import ClearLocalStorageButton from "./ClearLocalStorageButton";
+import ClearLocalStorageButton from "./ClearLocalStorageButton";
 import styles from "../css/footer.module.css";
 
 function Footer() {
@@ -11,7 +11,7 @@ function Footer() {
         information. You can easily filter through the database to find the
         perfect cocktail for any occasion.
       </h1>
-      {/* <ClearLocalStorageButton/> */}
+      <ClearLocalStorageButton/>
     </div>
   );
 }

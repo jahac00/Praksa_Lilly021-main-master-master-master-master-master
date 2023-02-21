@@ -1,13 +1,23 @@
 import Button from "@mui/material/Button";
+import styles from "../css/clearStorageButton.module.css";
 
 function ClearLocalStorageButton() {
     function handleClearLocalStorage() {
       localStorage.clear();
+      window.location.reload(false);
       // add any additional code you want to run after clearing the localStorage
     }
   
     return (
-      <Button variant="contained" onClick={handleClearLocalStorage}>Clear Local Storage</Button>
+      <div className={styles.clearLocalStorageButton}>
+        <Button
+          variant="contained"
+          onClick={handleClearLocalStorage}
+          className={styles.button}
+        >
+          Clear
+        </Button>
+      </div>
     );
   }
 
