@@ -5,10 +5,9 @@ function CocktailNotFound() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "100vh",
+        height: "75vh",
         fontSize: "3rem",
         color: "white",
-        backgroundColor: "black",
       }}
     >
       Cocktail Not Found!
