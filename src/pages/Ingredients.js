@@ -1,6 +1,6 @@
 import DataGridTable from "../components/DataGridTable";
 
-function Ingridients() {
+function Ingredients() {
   const endpoint =
     "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
   return (
@@ -10,4 +10,4 @@ function Ingridients() {
   );
 }
 
-export default Ingridients;
+export default Ingredients;

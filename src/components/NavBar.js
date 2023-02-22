@@ -18,7 +18,7 @@ function NavBar() {
         <div>
           <Button component={Link} to="/categories" color="inherit" className={styles['nav-link']}>Categories</Button>
           <Button component={Link} to="/glasses" color="inherit" className={styles['nav-link']}>Glasses</Button>
-          <Button component={Link} to="/ingridients" color="inherit" className={styles['nav-link']}>Ingredients</Button>
+          <Button component={Link} to="/ingredients" color="inherit" className={styles['nav-link']}>Ingredients</Button>
           <Button component={Link} to="/bartender-beginner" color="inherit" className={styles['nav-link']}>Bartender Beginner</Button>
           <Button component={Link} to="/bartender-veteran" color="inherit" className={styles['nav-link']}>Bartender Veteran</Button>
         </div>
