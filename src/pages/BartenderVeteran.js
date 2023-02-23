@@ -9,8 +9,8 @@ import classes from "../css/searchListItems.module.css";
 import AutocompleteSx from "../components/MyAutocompleteMultiple";
 
 const BartenderVeteran = () => {
-  const [ingredients, setIngredients] = useState([]);
   const [glasses, setGlasses] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
   const [categories, setCategories] = useState([]);
   const [alcoholic, setAlcoholic] = useState([]);
   const [searchCriteria, setSearchCriteria] = useState({
@@ -27,13 +27,13 @@ const BartenderVeteran = () => {
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
-    const ingredient = searchParams.get("ingredient");
     const glass = searchParams.get("glass");
+    const ingredient = searchParams.get("ingredient");
     const category = searchParams.get("category");
     const alcohol = searchParams.get("alcohol");
     setSearchCriteria({
-      ingredient: ingredient ? [ingredient] : [],
       glass: glass ? [glass] : [],
+      ingredient: ingredient ? [ingredient] : [],
       category: category ? [category] : [],
       alcohol: alcohol ? [alcohol] : [],
     });
