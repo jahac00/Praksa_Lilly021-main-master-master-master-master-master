@@ -1,7 +1,7 @@
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import AddToFavoritesButton from "../components/AddToFavoritesButton";
 import axios from "axios";
 import styles from "../css/searchButton.module.css";
@@ -22,6 +22,34 @@ const BartenderVeteran = () => {
   const [loading, setLoading] = useState(false);
   const [cocktails, setCocktails] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const ingredient = searchParams.get("ingredient");
+    const glass = searchParams.get("glass");
+    const category = searchParams.get("category");
+    const alcohol = searchParams.get("alcohol");
+    setSearchCriteria({
+      ingredient: ingredient ? [ingredient] : [],
+      glass: glass ? [glass] : [],
+      category: category ? [category] : [],
+      alcohol: alcohol ? [alcohol] : [],
+    });
+  }, [location]);
+
+  const updateUrl = () => {
+    const searchParams = new URLSearchParams(searchCriteria);
+    const queryString = searchParams.toString();
+    const url = queryString ? `?${queryString}` : "/";
+    window.history.pushState(null, "", url);
+  };
+  
+  useEffect(() => {
+    updateUrl();
+    handleSearch();
+  }, [searchCriteria]);
 
   // Display options into combobox
   useEffect(() => {
@@ -68,26 +96,29 @@ const BartenderVeteran = () => {
         )
       )
       .catch((error) => console.log(error));
+
   }, []);
+
+  
 
   const handleSearch = async () => {
     const { ingredient, glass, alcohol, category } = searchCriteria;
-    if (!ingredient && !glass && !alcohol && !category) {
-      alert("You must select at least one criteria.");
-      setCocktails([]);
-      return;
-    }
+    // if (!ingredient && !glass && !alcohol && !category) {
+    //   alert("You must select at least one criteria.");
+    //   setCocktails([]);
+    //   return;
+    // }
     const cocktails = await searchAllCocktails(
       ingredient,
       glass,
       alcohol,
       category
     );
-    if (!cocktails.filteredResults.length) {
-      alert("There are no cocktails with the selected criteria.");
-      setCocktails([]);
-      return;
-    }
+    // if (!cocktails.filteredResults.length) {
+    //   alert("There are no cocktails with the selected criteria.");
+    //   setCocktails([]);
+    //   return;
+    // }
     console.log(cocktails);
     setCocktails(cocktails);
     setFilteredResults(filteredResults);
