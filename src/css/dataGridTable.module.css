@@ -1,5 +1,6 @@
 .data-grid-container {
-    margin-left: 20px;
+    margin-left: -100%;
+    animation: slide-in 0.5s ease-in-out forwards;
     margin-right: 20px;
     margin-bottom: 110px;
     margin-top: 20px;
@@ -29,3 +30,14 @@
 /* li {
     background-color: rgb(54, 54, 54);
 } */
+
+@keyframes slide-in {
+    from {
+      margin-left: -100%;
+    }
+    to {
+      margin-left: 0;
+    }
+  }
+
+  
