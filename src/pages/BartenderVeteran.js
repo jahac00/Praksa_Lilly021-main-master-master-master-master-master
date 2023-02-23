@@ -47,7 +47,7 @@ const BartenderVeteran = () => {
   };
   
   useEffect(() => {
-    updateUrl();
+    // updateUrl();
     handleSearch();
   }, [searchCriteria]);
 

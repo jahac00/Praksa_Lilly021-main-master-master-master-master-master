@@ -89,6 +89,7 @@ function DataGridTable({ endpoint }) {
           rows={rows}
           columns={columns}
           pageSize={20}
+          rowsPerPageOptions={[20, 25, 50, 100]}
           className={styles.grid}
           cellClassName={styles.cell}
           rowHeight={100}
